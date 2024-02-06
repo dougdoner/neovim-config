@@ -1,3 +1,3 @@
 require("dougdoner.remap")
 require("dougdoner.set")
-require("dougdoner.packer")
+require("dougdoner.lazy")
