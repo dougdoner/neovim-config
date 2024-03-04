@@ -7,7 +7,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-plugins = { {
+PLUGINS = { {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000
@@ -112,4 +112,4 @@ plugins = { {
 	}
 } }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(PLUGINS, opts)
