@@ -64,7 +64,7 @@ PLUGINS = { {
 				formatting = lsp_zero.cmp_format(),
 				mapping = cmp.mapping.preset.insert({
 					['<C-Space>'] = cmp.mapping.complete(),
-					['<C-u>'] = cmp.mapping.scroll_docs( -4),
+					['<C-u>'] = cmp.mapping.scroll_docs(-4),
 					['<C-d>'] = cmp.mapping.scroll_docs(4),
 					['<C-f>'] = cmp_action.luasnip_jump_forward(),
 					['<C-b>'] = cmp_action.luasnip_jump_backward()
@@ -108,8 +108,16 @@ PLUGINS = { {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
 	dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-		"MunifTanjim/nui.nvim" -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		"MunifTanjim/nui.nvim"                                            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	}
-} }
+},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+	}
+}
+
 
 require("lazy").setup(PLUGINS, opts)
