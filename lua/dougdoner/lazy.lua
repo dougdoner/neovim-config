@@ -7,15 +7,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-PLUGINS = { {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000
-}, {
-	'williamboman/mason.nvim',
-	lazy = false,
-	config = true
-}, {
+PLUGINS = {
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa"
+	},
+	{
+		'williamboman/mason.nvim',
+		lazy = false,
+		config = true
+	}, {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate"
 }, {
